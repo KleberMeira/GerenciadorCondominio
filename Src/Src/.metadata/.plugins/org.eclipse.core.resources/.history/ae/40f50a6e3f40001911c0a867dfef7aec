@@ -1,0 +1,9 @@
+package estruturas;
+
+public final class Predio {
+
+	private String nome;
+	private int numAndares;
+	private int apPorAndar;
+	
+}

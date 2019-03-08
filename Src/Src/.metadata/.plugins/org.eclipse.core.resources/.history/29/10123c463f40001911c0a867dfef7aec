@@ -1,0 +1,19 @@
+package estruturas;
+
+public final class Engenheiro {
+
+	private int crea;
+
+	public Engenheiro(int crea) {
+		this.crea = crea;
+	}
+
+	public int getCrea() {
+		return crea;
+	}
+
+	public void setCrea(int crea) {
+		this.crea = crea;
+	}
+
+}

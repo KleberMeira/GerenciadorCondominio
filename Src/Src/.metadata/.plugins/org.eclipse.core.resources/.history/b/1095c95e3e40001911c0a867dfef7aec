@@ -1,0 +1,13 @@
+package estruturas;
+
+public class UnidadeResidencial {
+
+	protected int metragemUnidade;
+	protected int numQuartos;
+	protected int numBanheiros;
+	protected Pessoa proprietario;
+	
+	
+	
+	
+}

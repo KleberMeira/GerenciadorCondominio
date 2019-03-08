@@ -1,0 +1,10 @@
+package estruturas;
+
+public abstract class Edificacao {
+
+	protected float metragemTotal;
+	protected String endereco;
+	protected Engenheiro responsavel;
+	protected UnidadeResidencial unidades;
+	
+}

@@ -1,0 +1,15 @@
+package estruturas;
+
+public class Casa extends Edificacao {
+
+	protected boolean condominio;
+
+	public Casa(boolean condominio) {
+		this.condominio = condominio;
+	}
+	
+	
+	
+	
+	
+}
