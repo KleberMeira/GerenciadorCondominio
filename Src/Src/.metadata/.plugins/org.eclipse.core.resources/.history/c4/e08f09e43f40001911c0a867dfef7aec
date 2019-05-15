@@ -1,8 +1,0 @@
-package estruturas;
-
-public class CasaSobrado extends Casa {
-
-	private int numAndares;
-	
-	
-}
