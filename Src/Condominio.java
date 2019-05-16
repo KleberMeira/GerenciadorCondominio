@@ -1,17 +1,12 @@
 
-import java.util.Scanner;
-
 
 public class Condominio extends Edificacao {
 
-	Scanner input = new Scanner(System.in);
 	
 	private double metragemCondominio;
 	private String proprietarioCondominio;
 	private String enderecoCondominio;
-	private int quantCasas;
 	private int quantPredios;
-	private Casa[] casas;
 	private Predio[] predios;
 	
 	
@@ -21,7 +16,6 @@ public class Condominio extends Edificacao {
 		this.metragemCondominio = metragemCondominio;
 		this.proprietarioCondominio = proprietarioCondominio;
 		this.enderecoCondominio = enderecoCondominio;
-		this.casas = new Casa[quantCasas];
 		this.predios = new Predio[quantPredios];
 	}
 	
@@ -62,25 +56,6 @@ public class Condominio extends Edificacao {
 	}
 
 
-
-	public Casa[] getCasas() {
-		return casas;
-	}
-
-
-
-	public void setCasas(Casa unidCasa) {
-		
-		int pos = 0;
-		
-		for(int i = 0; i < this.casas.length; i++) {
-			if(casas[i] != null) {
-				pos++;
-			}
-		}
-		this.casas[pos] = unidCasa;
-		
-	}
 	
 	public void ler() {
 		
