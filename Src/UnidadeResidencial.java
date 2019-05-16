@@ -1,4 +1,4 @@
-package estruturas;
+
 
 public class UnidadeResidencial {
 
@@ -8,7 +8,6 @@ public class UnidadeResidencial {
 	protected Pessoa proprietario;
 
 	public UnidadeResidencial(float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario) {
-		super();
 		this.metragemUnidade = metragemUnidade;
 		this.numQuartos = numQuartos;
 		this.numBanheiros = numBanheiros;
@@ -61,18 +60,11 @@ public class UnidadeResidencial {
 
 	//Descrição para uma unidade residencial
 	public String descricaoDoImovel() {
-		return  " " +proprietario.infoPessoa() +"\n"+
+		return  " " + proprietario.infoPessoa() +"\n"+
 				"Possui " + getMetragemUnidade() + " metros quadrados" +"\n" +
 				 getNumQuartos() + " quartos." + "\n"+
-				 getNumBanheiros() + " banheiros.";
+				 getNumBanheiros() + " banheiros." ;			
 	}
-	/*
-	Numero de Andares: 2
-	Apartamentos por Andar: 3
-	*/
-	
-	
-	
-	
+
 	
 }

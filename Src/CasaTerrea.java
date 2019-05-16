@@ -1,4 +1,4 @@
-package estruturas;
+
 
 public class CasaTerrea extends Casa {
 

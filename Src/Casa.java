@@ -1,6 +1,5 @@
-package estruturas;
 
-public class Casa extends Edificacao {
+public class Casa  {
 
 	
 	public String descricaoDoImovel() {

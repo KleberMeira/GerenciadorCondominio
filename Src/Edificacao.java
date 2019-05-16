@@ -1,15 +1,18 @@
-package estruturas;
 
-import java.util.Scanner;
-
-public abstract class Edificacao {
-
-	Scanner input = new Scanner(System.in);
+public class Edificacao {
 	
-	protected float metragemTotal;
-	protected String endereco;
-	protected Engenheiro responsavel;
-	protected UnidadeResidencial unidades;
+	private float metragemTotal;
+	private String endereco;
+	private Engenheiro responsavel;
+	private UnidadeResidencial unidades;
+
+	public Edificacao(float metragemTotal, String endereco, Engenheiro responsavel,
+			UnidadeResidencial unidades) {
+		this.metragemTotal = metragemTotal;
+		this.endereco = endereco;
+		this.responsavel = new Engenheiro(responsavel);
+		this.unidades = new UnidadeResidencial(unidades);
+	}
 
 	public float getMetragemTotal() {
 		return metragemTotal;
@@ -39,10 +42,6 @@ public abstract class Edificacao {
 		return unidades;
 	}
 
-	public void cadastrarUnidade(UnidadeResidencial novaUnid) {
-				
-	}
-	
 	public String descricaoDoImovel() {
 		return " ";
 	}

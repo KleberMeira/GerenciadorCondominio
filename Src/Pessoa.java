@@ -1,4 +1,4 @@
-package estruturas;
+
 
 public class Pessoa {
 
@@ -6,7 +6,6 @@ public class Pessoa {
 	protected String cpf;
 
 	public Pessoa(String nome, String cpf) {
-		super();
 		this.nome = nome;
 		this.cpf = cpf;
 	}
@@ -33,7 +32,8 @@ public class Pessoa {
 	}
 	
 	public String infoPessoa() {
-		return "Propriedade de: " + getNome();
+		return "Propriedade de: " + getNome() +"\n"
+			+ "Cpf: " + getCpf();
 	}
 
 }

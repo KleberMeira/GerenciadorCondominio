@@ -1,4 +1,3 @@
-package estruturas;
 
 public final class Engenheiro extends Pessoa {
 
@@ -8,7 +7,7 @@ public final class Engenheiro extends Pessoa {
 		super(nome, cpf);
 		this.crea = crea;
 	}
-	
+
 	public Engenheiro(Engenheiro e) {
 		super(e.getNome(), e.getCpf());
 		this.crea = e.getCrea();
@@ -21,9 +20,9 @@ public final class Engenheiro extends Pessoa {
 	public void setCrea(int crea) {
 		this.crea = crea;
 	}
-	
+
 	public String infoPessoa() {
 		return "Responsável: " + getNome() + "." + "CREA: " + getCrea();
 	}
-	
+
 }
