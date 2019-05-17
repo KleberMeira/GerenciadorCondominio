@@ -5,9 +5,41 @@ public class Teste {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Scanner input = new Scanner(System.in);
+
+		Engenheiro eng = new Engenheiro("Kleber", "123", 1547);
+		Pessoa p = new Pessoa("Joao", "135");
+		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
+		UnidadeResidencial ud = new UnidadeResidencial(14, 2, 2, p );
+		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
+		//String nomePredio, int numAndares, int apPorAndar
+
+		Pessoa p2 = new Pessoa("Marcos", "457");
+		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
+		UnidadeResidencial ud2 = new UnidadeResidencial(14, 3, 1, p2 );
+		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
+		//String nomePredio, int numAndares, int apPorAndar
+
+		Predio pre = new Predio(21, "Avenida Paineiras", eng,ud,"Maria Amelia", 2, 1  );
+		Predio pre2 = new Predio(21, "Avenida Paineiras", eng,ud2,"Maria Amelia", 2, 1  );
+
+		pre.setApartamentos(ud);
+		pre.setApartamentos(ud2);
+		//pre.dadosAptos();
 		
+		pre2.setApartamentos(ud2);
+		pre2.setApartamentos(ud);
+		//pre2.dadosAptos();
 		
+		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
+		//double metragemCondominio, String proprietarioCondominio, String enderecoCondominio, int quantPredios
+		Condominio cond = new Condominio(21, "Rua Central", eng, ud, 12, "Joao Dias", "Rua Central A", 2);
+		
+		cond.setPredios(pre);
+		cond.setPredios(pre2);
+
+		cond.infoCondominio();
+		
+		/*
 		System.out.println(" Gerenciador de Condominio ");
 		System.out.println();
 		System.out.println("[1] Cadastro ");
@@ -86,17 +118,16 @@ public class Teste {
 				System.out.println();
 				System.out.println("Condominio cadastrado com sucesso!");
 				System.out.println();
+
 			}
+
+			case 2:{
+
+			}
+
+			*/
 		}
 		
-		
-		
-		
-		
-		
-		
-		
 
-	}
 
 }

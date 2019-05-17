@@ -16,14 +16,6 @@ public final class Predio extends Edificacao {
 		this.apartamentos = new UnidadeResidencial[this.apPorAndar * this.numAndares];
 	}
 
-	public Predio(Predio p) {
-		super(p.getMetragemTotal(), p.getEndereco(), p.getResponsavel(), p.getUnidades());
-		this.nomePredio = p.getNomePredio();
-		this.numAndares = p.getNumAndares();
-		this.apPorAndar = p.getApPorAndar();
-	}
-	
-
 	public UnidadeResidencial[] getApartamentos() {
 		return apartamentos;
 	}
@@ -43,17 +35,17 @@ public final class Predio extends Edificacao {
 		
 	}
 	
-	public String dadosAptos() {
+	public void dadosAptos() {
 		 for(int i = 0; i < apartamentos.length; i++) {
 
-			apartamentos[i].proprietario.infoPessoa();
-			apartamentos[i].getMetragemUnidade();
-			apartamentos[i].getNumQuartos();
-			apartamentos[i].getNumBanheiros();
-			
+			 System.out.println("Proprietario: "+ apartamentos[i].proprietario.infoPessoa());
+			 System.out.println("Metragem: "+ apartamentos[i].getMetragemUnidade());
+			 System.out.println("Quantidade de Quartos: "+ apartamentos[i].getNumQuartos());
+			 System.out.println("Quantidade de Banheiros: "+apartamentos[i].getNumBanheiros());
+			 System.out.println();
 		}
 	
-		return null;
+
 		
 	}
 	
@@ -82,10 +74,10 @@ public final class Predio extends Edificacao {
 		this.apPorAndar = apPorAndar;
 	}
 
-	// Descrição para um prédio
+	// Descriï¿½ï¿½o para um prï¿½dio
 	public String descricaoDoImovel() {
 		return " Predio: " + getNomePredio() + "\n" + "Situado na: " + getEndereco() + "\n" + "Area total: "
-				+ getMetragemTotal() + " metros quadrados." + "\n" + "Responsável: " + "\n" + "Numero de Andares: "
+				+ getMetragemTotal() + " metros quadrados." + "\n" + "Responsï¿½vel: " + "\n" + "Numero de Andares: "
 				+ getNumAndares() + "\n" + "Apartamentos por Andar: " + getApPorAndar() + "\n";
 	}
 	

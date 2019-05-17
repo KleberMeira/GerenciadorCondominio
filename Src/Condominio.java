@@ -106,7 +106,12 @@ public class Condominio extends Edificacao {
 			int tamanho = predios[i].getApartamentos().length;
 			
 			for(int j = 0; j < tamanho; j++) {
-				System.out.println("Aptos");
+				System.out.println("Proprietario: " + predios[j].getUnidades().proprietario);
+				System.out.println("Metragem Unidade: " + predios[j].getUnidades().getMetragemUnidade());
+				System.out.println("Quatidade de Quartos: " + predios[j].getUnidades().getNumQuartos());
+				System.out.println("Quantidade de Banheiros: " + predios[j].getUnidades().getNumBanheiros());
+				System.out.println();
+				
 			}
 			
 			System.out.println();
