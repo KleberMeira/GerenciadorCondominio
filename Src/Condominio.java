@@ -90,7 +90,7 @@ public class Condominio extends Edificacao {
 		
 		System.out.println("::Condominio::");
 		System.out.println("Proprietario: " + getProprietarioCondominio());
-		System.out.println("Endereço: " + getEnderecoCondominio());
+		System.out.println("Endereï¿½o: " + getEnderecoCondominio());
 		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
 		System.out.println();
 		
@@ -106,7 +106,8 @@ public class Condominio extends Edificacao {
 			int tamanho = predios[i].getApartamentos().length;
 			
 			for(int j = 0; j < tamanho; j++) {
-				System.out.println("Proprietario: " + predios[j].getUnidades().proprietario);
+				System.out.println("Proprietario: " + predios[j].getUnidades().proprietario.getNome());
+				System.out.println("Cpf do Proprietario: " + predios[j].getUnidades().proprietario.getCpf());
 				System.out.println("Metragem Unidade: " + predios[j].getUnidades().getMetragemUnidade());
 				System.out.println("Quatidade de Quartos: " + predios[j].getUnidades().getNumQuartos());
 				System.out.println("Quantidade de Banheiros: " + predios[j].getUnidades().getNumBanheiros());
@@ -137,16 +138,16 @@ public class Condominio extends Edificacao {
 //		System.out.println(casas.length);
 //		System.out.println(predios.length);
 	if(construcao instanceof Predio) {
-		System.out.println("É um predio");
+		System.out.println("ï¿½ um predio");
 		
 		addPredio(construcao);
 		
 	}
 	if(construcao instanceof CasaTerrea) {
-		System.out.println("É uma casa Terrea");
+		System.out.println("ï¿½ uma casa Terrea");
 	}
 	if(construcao instanceof CasaSobrado) {
-		System.out.println("É um Sobrado");
+		System.out.println("ï¿½ um Sobrado");
 	}
 	
 }

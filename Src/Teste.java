@@ -55,7 +55,7 @@ public class Teste {
 				
 				System.out.println(" Cadastro de Condominio ");
 				System.out.println();
-				System.out.println("Engenheiro Responsável: ");
+				System.out.println("Engenheiro Responsï¿½vel: ");
 				String nomeEng = input.nextLine();
 				System.out.println("Cpf: ");
 				String cpfEng = input.nextLine();
@@ -73,17 +73,17 @@ public class Teste {
 				
 				System.out.println("Metragem total: ");
 				float metragemTotal = input.nextFloat();
-				System.out.println("Endereço: ");
+				System.out.println("Endereï¿½o: ");
 				String enderecoCond = input.nextLine();
-				System.out.println("Metragem de Area Construída: ");
+				System.out.println("Metragem de Area Construï¿½da: ");
 				double metragemCond = input.nextDouble();
-				System.out.println("Proprietário Legal: ");
+				System.out.println("Proprietï¿½rio Legal: ");
 				String proprietarioCond = input.nextLine();
 				
 				System.out.println();
 				System.out.println("Parte 2");
 				
-				System.out.println("Endereço do Condominio: ");
+				System.out.println("Endereï¿½o do Condominio: ");
 				String enderecoCond2 = input.nextLine();
 				
 				System.out.println("Quantidade de Predios: ");

@@ -23,6 +23,7 @@ public class UnidadeResidencial {
 		this.metragemUnidade = ur.getMetragemUnidade();
 		this.numQuartos = ur.getNumQuartos();
 		this.numBanheiros = ur.getNumBanheiros();
+		this.proprietario = ur.getProprietario();
 	}
 	
 	
@@ -58,7 +59,7 @@ public class UnidadeResidencial {
 		this.proprietario = proprietario;
 	}
 
-	//Descrição para uma unidade residencial
+	//Descriï¿½ï¿½o para uma unidade residencial
 	public String descricaoDoImovel() {
 		return  " " + proprietario.infoPessoa() +"\n"+
 				"Possui " + getMetragemUnidade() + " metros quadrados" +"\n" +
