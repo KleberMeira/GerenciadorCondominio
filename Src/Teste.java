@@ -5,7 +5,7 @@ public class Teste {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-
+		/*
 		Engenheiro eng = new Engenheiro("Kleber", "123", 1547);
 		Pessoa p = new Pessoa("Joao", "135");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
@@ -38,13 +38,15 @@ public class Teste {
 		cond.setPredios(pre2);
 
 		cond.infoCondominio();
+		*/
 		
-		/*
 		System.out.println(" Gerenciador de Condominio ");
 		System.out.println();
 		System.out.println("[1] Cadastro ");
 		System.out.println("[2] Listagem ");
 		System.out.println("[3] Sair ");
+		
+		Scanner input = new Scanner(System.in);
 		
 		int menu = input.nextInt();
 		
@@ -56,10 +58,12 @@ public class Teste {
 				System.out.println(" Cadastro de Condominio ");
 				System.out.println();
 				System.out.println("Engenheiro Respons�vel: ");
-				String nomeEng = input.nextLine();
+				String nomeEng = input.next();
+				System.out.println();
 				System.out.println("Cpf: ");
-				String cpfEng = input.nextLine();
+				String cpfEng = input.next();
 				System.out.println("Crea: ");
+				
 				int crea = input.nextInt();
 				Engenheiro eng = new Engenheiro(nomeEng, cpfEng, crea);
 				
@@ -74,17 +78,20 @@ public class Teste {
 				System.out.println("Metragem total: ");
 				float metragemTotal = input.nextFloat();
 				System.out.println("Endere�o: ");
-				String enderecoCond = input.nextLine();
+				String enderecoCond = input.next();
+				System.out.println();
 				System.out.println("Metragem de Area Constru�da: ");
 				double metragemCond = input.nextDouble();
 				System.out.println("Propriet�rio Legal: ");
-				String proprietarioCond = input.nextLine();
+				String proprietarioCond = input.next();
+				System.out.println();
 				
 				System.out.println();
 				System.out.println("Parte 2");
 				
 				System.out.println("Endere�o do Condominio: ");
-				String enderecoCond2 = input.nextLine();
+				String enderecoCond2 = input.next();
+				System.out.println();
 				
 				System.out.println("Quantidade de Predios: ");
 				int qPredios = input.nextInt();
@@ -105,9 +112,11 @@ public class Teste {
 				System.out.println();
 				
 				System.out.println("Nome: ");
-				String nomeProprietario = input.nextLine();
+				String nomeProprietario = input.next();
+				System.out.println();
 				System.out.println("Cpf: ");
-				String cpfProprietario = input.nextLine();
+				String cpfProprietario = input.next();
+				System.out.println();
 				//String nome, String cpf
 				Pessoa p = new Pessoa(nomeProprietario, cpfProprietario);
 				//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
@@ -125,9 +134,9 @@ public class Teste {
 
 			}
 
-			*/
+			
 		}
-		
+	}
 
 
 }
