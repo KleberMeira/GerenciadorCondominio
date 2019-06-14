@@ -1,5 +1,5 @@
 
-public class Edificacao {
+public abstract class Edificacao {
 	
 	private float metragemTotal;
 	private String endereco;
@@ -41,7 +41,12 @@ public class Edificacao {
 	public UnidadeResidencial getUnidades() {
 		return unidades;
 	}
-
+	
+	public boolean cadastrarUnidade(UnidadeResidencial novaUnid) {
+		return true;
+	}
+	
+	
 	public String descricaoDoImovel() {
 		return " ";
 	}

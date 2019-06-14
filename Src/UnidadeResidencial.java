@@ -59,7 +59,7 @@ public class UnidadeResidencial {
 		this.proprietario = proprietario;
 	}
 
-	//Descri��o para uma unidade residencial
+	//Desc para uma unidade residencial
 	public String descricaoDoImovel() {
 		return  " " + proprietario.infoPessoa() +"\n"+
 				"Possui " + getMetragemUnidade() + " metros quadrados" +"\n" +

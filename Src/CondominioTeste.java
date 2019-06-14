@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Teste {
+public class CondominioTeste {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		/*
+		
 		Engenheiro eng = new Engenheiro("Kleber", "123", 1547);
 		Pessoa p = new Pessoa("Joao", "135");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
@@ -14,18 +14,35 @@ public class Teste {
 		//String nomePredio, int numAndares, int apPorAndar
 
 		Pessoa p2 = new Pessoa("Marcos", "457");
+		Pessoa p3 = new Pessoa("Felipe", "574");
+		Pessoa p4 = new Pessoa("Diogo", "457");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
 		UnidadeResidencial ud2 = new UnidadeResidencial(14, 3, 1, p2 );
+		UnidadeResidencial ud3 = new UnidadeResidencial(24, 4, 3, p3 );
+		UnidadeResidencial ud4 = new UnidadeResidencial(31, 4, 4, p4 );
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//String nomePredio, int numAndares, int apPorAndar
 
 		Predio pre = new Predio(21, "Avenida Paineiras", eng,ud,"Maria Amelia", 2, 1  );
 		Predio pre2 = new Predio(21, "Avenida Paineiras", eng,ud2,"Maria Amelia", 2, 1  );
-
-		pre.setApartamentos(ud);
-		pre.setApartamentos(ud2);
+		
+		pre.setApto(ud);
+		pre.setApto(ud2);
+		//pre.dadosAp();
+		
+		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
+		//boolean condominio
+		Casa cs = new Casa(430, "Rua 1", eng, ud2, true);
+		Casa cs2 = new Casa(650, "Rua 1B", eng, ud3, false);
+		
+		cs.setCasa(ud3);
+		cs.setCasa(ud4);
+		cs.dadosCasa();
+		//pre.setApartamentos(ud);
+		//pre.setApartamentos(ud2);
 		//pre.dadosAptos();
 		
+		/*
 		pre2.setApartamentos(ud2);
 		pre2.setApartamentos(ud);
 		//pre2.dadosAptos();
@@ -40,6 +57,8 @@ public class Teste {
 		cond.infoCondominio();
 		*/
 		
+		
+		/*
 		System.out.println(" Gerenciador de Condominio ");
 		System.out.println();
 		System.out.println("[1] Cadastro ");
@@ -137,6 +156,7 @@ public class Teste {
 			
 		}
 	}
+	*/
 
-
+	}
 }

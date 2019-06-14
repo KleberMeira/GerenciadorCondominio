@@ -1,11 +1,14 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public final class Predio extends Edificacao {
 
 	private String nomePredio;
 	private int numAndares;
 	private int apPorAndar;
-	private UnidadeResidencial[] apartamentos;
+	private  UnidadeResidencial[] apartamentos;
+	
+	List<UnidadeResidencial> unidade = new ArrayList<UnidadeResidencial>();
 	
 	public Predio(float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 			String nomePredio, int numAndares, int apPorAndar) {
@@ -32,6 +35,18 @@ public final class Predio extends Edificacao {
 		}
 		
 		this.apartamentos[pos] = unid;
+		
+	}
+	
+	public void setApto(UnidadeResidencial unid) {		
+		unidade.add(unid);
+	}
+	
+	public void dadosAp() {
+		
+			for(int i = 0; i < unidade.size() ; i++) {
+				System.out.println(unidade.get(i).descricaoDoImovel());		
+			}
 		
 	}
 	
@@ -74,10 +89,9 @@ public final class Predio extends Edificacao {
 		this.apPorAndar = apPorAndar;
 	}
 
-	// Descri��o para um pr�dio
+	// Desc Predio
 	public String descricaoDoImovel() {
-		return " Predio: " + getNomePredio() + "\n" + "Situado na: " + getEndereco() + "\n" + "Area total: "
-				+ getMetragemTotal() + " metros quadrados." + "\n" + "Respons�vel: " + "\n" + "Numero de Andares: "
+		return " Predio: " + getNomePredio() + "\n" + "Numero de Andares: "
 				+ getNumAndares() + "\n" + "Apartamentos por Andar: " + getApPorAndar() + "\n";
 	}
 	
