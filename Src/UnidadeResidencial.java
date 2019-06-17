@@ -18,7 +18,6 @@ public class UnidadeResidencial {
 		
 	}
 
-	
 	public UnidadeResidencial(UnidadeResidencial ur) {
 		this.metragemUnidade = ur.getMetragemUnidade();
 		this.numQuartos = ur.getNumQuartos();
@@ -66,6 +65,4 @@ public class UnidadeResidencial {
 				 getNumQuartos() + " quartos." + "\n"+
 				 getNumBanheiros() + " banheiros." ;			
 	}
-
-	
 }

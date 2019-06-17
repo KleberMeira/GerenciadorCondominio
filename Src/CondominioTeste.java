@@ -26,21 +26,20 @@ public class CondominioTeste {
 		Predio pre = new Predio(21, "Avenida Paineiras", eng,ud,"Maria Amelia", 2, 1  );
 		Predio pre2 = new Predio(21, "Avenida Paineiras", eng,ud2,"Maria Amelia", 2, 1  );
 		
+		System.out.println("- Unidade Predio -");
 		pre.setApto(ud);
 		pre.setApto(ud2);
-		//pre.dadosAp();
+		pre.dadosAp();
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//boolean condominio
 		Casa cs = new Casa(430, "Rua 1", eng, ud2, true);
 		Casa cs2 = new Casa(650, "Rua 1B", eng, ud3, false);
 		
+		System.out.println("- Unidade Casa -");
 		cs.setCasa(ud3);
 		cs.setCasa(ud4);
 		cs.dadosCasa();
-		//pre.setApartamentos(ud);
-		//pre.setApartamentos(ud2);
-		//pre.dadosAptos();
 		
 		/*
 		pre2.setApartamentos(ud2);

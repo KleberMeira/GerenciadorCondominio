@@ -6,9 +6,8 @@ public final class Predio extends Edificacao {
 	private String nomePredio;
 	private int numAndares;
 	private int apPorAndar;
-	private  UnidadeResidencial[] apartamentos;
 	
-	List<UnidadeResidencial> unidade = new ArrayList<UnidadeResidencial>();
+	private List<UnidadeResidencial> unidade = new ArrayList<UnidadeResidencial>();
 	
 	public Predio(float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 			String nomePredio, int numAndares, int apPorAndar) {
@@ -16,55 +15,29 @@ public final class Predio extends Edificacao {
 		this.nomePredio = nomePredio;
 		this.numAndares = numAndares;
 		this.apPorAndar = apPorAndar;
-		this.apartamentos = new UnidadeResidencial[this.apPorAndar * this.numAndares];
 	}
 
-	public UnidadeResidencial[] getApartamentos() {
-		return apartamentos;
-	}
-
-	
-	public void setApartamentos(UnidadeResidencial unid) {
-		
-		int pos = 0;
-		
-		for(int i = 0 ; i < apartamentos.length; i++) {
-			if(apartamentos[i] != null) {
-				pos++;
-			}
-		}
-		
-		this.apartamentos[pos] = unid;
-		
-	}
-	
 	public void setApto(UnidadeResidencial unid) {		
 		unidade.add(unid);
 	}
 	
+
+	public List<UnidadeResidencial> getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(List<UnidadeResidencial> unidade) {
+		this.unidade = unidade;
+	}
+
 	public void dadosAp() {
 		
-			for(int i = 0; i < unidade.size() ; i++) {
-				System.out.println(unidade.get(i).descricaoDoImovel());		
+		for(int i = 0; i < unidade.size() ; i++) {
+				System.out.println(unidade.get(i).descricaoDoImovel());	
+				System.out.println();
 			}
-		
 	}
-	
-	public void dadosAptos() {
-		 for(int i = 0; i < apartamentos.length; i++) {
 
-			 System.out.println("Proprietario: "+ apartamentos[i].proprietario.infoPessoa());
-			 System.out.println("Metragem: "+ apartamentos[i].getMetragemUnidade());
-			 System.out.println("Quantidade de Quartos: "+ apartamentos[i].getNumQuartos());
-			 System.out.println("Quantidade de Banheiros: "+apartamentos[i].getNumBanheiros());
-			 System.out.println();
-		}
-	
-
-		
-	}
-	
-	
 	public String getNomePredio() {
 		return nomePredio;
 	}

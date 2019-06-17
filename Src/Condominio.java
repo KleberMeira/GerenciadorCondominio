@@ -1,22 +1,20 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Condominio extends Edificacao {
 
-	
 	private double metragemCondominio;
 	private String proprietarioCondominio;
 	private String enderecoCondominio;
-	private int quantPredios;
-	private Predio[] predios;
 	
+	List <Predio> predios = new ArrayList<Predio>();
 	
 	public Condominio(float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
-			double metragemCondominio, String proprietarioCondominio, String enderecoCondominio, int quantPredios) {
+			double metragemCondominio, String proprietarioCondominio, String enderecoCondominio) {
 		super(metragemTotal, endereco, responsavel, unidades);
 		this.metragemCondominio = metragemCondominio;
 		this.proprietarioCondominio = proprietarioCondominio;
 		this.enderecoCondominio = enderecoCondominio;
-		this.predios = new Predio[quantPredios];
 	}
 	
 	
@@ -56,31 +54,26 @@ public class Condominio extends Edificacao {
 	}
 
 
-	
+	/*
 	public void ler() {
 		
 		for(int j = 0; j < predios.length; j++) {
 			System.out.println(predios[j].getApPorAndar());
 		}
 	}
+	*/
 
 
-
+	/*
 	public Predio[] getPredios() {
 		return predios;
 	}
+	*/
 
 
 
 	public void setPredios(Predio unidPredios) {
-		
-		int pos = 0;
-		for(int i = 0; i < predios.length; i++) {
-			if(predios[i] != null) {
-				pos++;
-			}
-		}
-		predios[pos] = unidPredios;
+		predios.add(unidPredios);
 	}
 
 
@@ -94,16 +87,17 @@ public class Condominio extends Edificacao {
 		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
 		System.out.println();
 		
-		for(int i = 0; i < predios.length; i++) {
+		for(int i = 0; i < predios.size(); i++) {
 			System.out.println("Unidade: " + i);
-			System.out.println("Nome do Predios: " + predios[i].getNomePredio());
-			System.out.println("Quantidade de andar: " + predios[i].getNumAndares());
-			System.out.println("Apartamentos por andar: " + predios[i].getApPorAndar());
+			System.out.println("Nome do Predios: " + predios.get(i).getNomePredio());
+			System.out.println("Quantidade de andar: " + predios.get(i).getNumAndares());
+			System.out.println("Apartamentos por andar: " + predios.get(i).getApPorAndar());
 			
 			System.out.println();
 			System.out.println("--Apartamentos--");
 			
-			int tamanho = predios[i].getApartamentos().length;
+			/*
+			int tamanho = predios.get(i).getUnidade();
 			
 			for(int j = 0; j < tamanho; j++) {
 				System.out.println("Proprietario: " + predios[j].getUnidades().proprietario.getNome());
@@ -114,7 +108,7 @@ public class Condominio extends Edificacao {
 				System.out.println();
 				
 			}
-			
+			*/
 			System.out.println();
 			System.out.println();
 			
