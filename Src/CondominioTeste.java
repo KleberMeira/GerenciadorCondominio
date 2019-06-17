@@ -6,55 +6,61 @@ public class CondominioTeste {
 		// TODO Auto-generated method stub
 
 		
-		Engenheiro eng = new Engenheiro("Kleber", "123", 1547);
+		Engenheiro eng = new Engenheiro("Astolfo Pires", "123", 123456);
 		Pessoa p = new Pessoa("Joao", "135");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
-		UnidadeResidencial ud = new UnidadeResidencial(14, 2, 2, p );
+		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//String nomePredio, int numAndares, int apPorAndar
 
-		Pessoa p2 = new Pessoa("Marcos", "457");
+		Pessoa p2 = new Pessoa("Gilberto Macedo", "457");
 		Pessoa p3 = new Pessoa("Felipe", "574");
 		Pessoa p4 = new Pessoa("Diogo", "457");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
+		UnidadeResidencial ud = new UnidadeResidencial(14, 2, 2, p );
 		UnidadeResidencial ud2 = new UnidadeResidencial(14, 3, 1, p2 );
 		UnidadeResidencial ud3 = new UnidadeResidencial(24, 4, 3, p3 );
 		UnidadeResidencial ud4 = new UnidadeResidencial(31, 4, 4, p4 );
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//String nomePredio, int numAndares, int apPorAndar
 
-		Predio pre = new Predio(21, "Avenida Paineiras", eng,ud,"Maria Amelia", 2, 1  );
+		Predio pre = new Predio(542, "Rua da Paz, 135. Campo Grande", eng,ud,"Dom Quixote", 3, 1  );
 		Predio pre2 = new Predio(21, "Avenida Paineiras", eng,ud2,"Maria Amelia", 2, 1  );
 		
-		System.out.println("- Unidade Predio -");
+		//System.out.println("- Unidade Predio -");
 		pre.setApto(ud);
 		pre.setApto(ud2);
-		pre.dadosAp();
+		pre.setApto(ud3);
+		
+		//pre.dadosAp();
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//boolean condominio
 		Casa cs = new Casa(430, "Rua 1", eng, ud2, true);
 		Casa cs2 = new Casa(650, "Rua 1B", eng, ud3, false);
 		
+		/*
 		System.out.println("- Unidade Casa -");
 		cs.setCasa(ud3);
 		cs.setCasa(ud4);
 		cs.dadosCasa();
+		*/
 		
 		/*
 		pre2.setApartamentos(ud2);
 		pre2.setApartamentos(ud);
-		//pre2.dadosAptos();
+		pre2.dadosAptos();
+		*/
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
-		//double metragemCondominio, String proprietarioCondominio, String enderecoCondominio, int quantPredios
-		Condominio cond = new Condominio(21, "Rua Central", eng, ud, 12, "Joao Dias", "Rua Central A", 2);
+		//double metragemCondominio, String proprietarioCondominio, String enderecoCondominio
+		Condominio cond = new Condominio(2100, "Rua Manoel Machado", eng, ud, 120, "Joao Ferreira Dias", "Avenida Filinto Miller");
 		
 		cond.setPredios(pre);
-		cond.setPredios(pre2);
+		//cond.setPredios(pre2);
 
 		cond.infoCondominio();
-		*/
+		
 		
 		
 		/*

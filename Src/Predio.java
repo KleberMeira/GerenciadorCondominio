@@ -31,8 +31,10 @@ public final class Predio extends Edificacao {
 	}
 
 	public void dadosAp() {
+		System.out.println(descricaoDoImovel());
 		
 		for(int i = 0; i < unidade.size() ; i++) {
+				System.out.println("Unidade " + i);
 				System.out.println(unidade.get(i).descricaoDoImovel());	
 				System.out.println();
 			}

@@ -8,6 +8,7 @@ public class Condominio extends Edificacao {
 	private String enderecoCondominio;
 	
 	List <Predio> predios = new ArrayList<Predio>();
+	List <Casa> casas = new ArrayList<Casa>();
 	
 	public Condominio(float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 			double metragemCondominio, String proprietarioCondominio, String enderecoCondominio) {
@@ -53,29 +54,36 @@ public class Condominio extends Edificacao {
 		this.enderecoCondominio = enderecoCondominio;
 	}
 
-
-	/*
-	public void ler() {
-		
-		for(int j = 0; j < predios.length; j++) {
-			System.out.println(predios[j].getApPorAndar());
-		}
-	}
-	*/
-
-
-	/*
-	public Predio[] getPredios() {
-		return predios;
-	}
-	*/
-
-
-
 	public void setPredios(Predio unidPredios) {
 		predios.add(unidPredios);
 	}
 
+	public void setCasas(Casa unidCasa) {
+		casas.add(unidCasa);
+	}
+	
+	public void quantPredio() {
+		//exessao
+		System.out.println(predios.size() + " Predios.");
+	}
+	public void quantCasa() {
+		//exessao
+		System.out.println(casas.size() + " Casas.");
+	}
+	
+	public Predio buscaPredio(String nome) {
+		
+		//exessao
+		for(int i = 0; i < predios.size(); i++) {
+			
+			if(predios.get(i).getNomePredio() == nome) {
+				return predios.get(i);
+			}
+			
+		}
+		return null;
+	}
+	
 
 
 	public void infoCondominio() {
@@ -83,9 +91,10 @@ public class Condominio extends Edificacao {
 		
 		System.out.println("::Condominio::");
 		System.out.println("Proprietario: " + getProprietarioCondominio());
-		System.out.println("Endere�o: " + getEnderecoCondominio());
+		System.out.println("Endereco: " + getEnderecoCondominio());
 		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
 		System.out.println();
+		
 		
 		for(int i = 0; i < predios.size(); i++) {
 			System.out.println("Unidade: " + i);
@@ -96,19 +105,23 @@ public class Condominio extends Edificacao {
 			System.out.println();
 			System.out.println("--Apartamentos--");
 			
-			/*
-			int tamanho = predios.get(i).getUnidade();
-			
+			//exessao indexOfBounsExeption
+			int tamanho = predios.get(i).getUnidade().size();
 			for(int j = 0; j < tamanho; j++) {
-				System.out.println("Proprietario: " + predios[j].getUnidades().proprietario.getNome());
-				System.out.println("Cpf do Proprietario: " + predios[j].getUnidades().proprietario.getCpf());
-				System.out.println("Metragem Unidade: " + predios[j].getUnidades().getMetragemUnidade());
-				System.out.println("Quatidade de Quartos: " + predios[j].getUnidades().getNumQuartos());
-				System.out.println("Quantidade de Banheiros: " + predios[j].getUnidades().getNumBanheiros());
+				
+				System.out.println("Proprietario: " + predios.get(j).getUnidade().get(j).proprietario.getNome());
+				System.out.println("Cpf do Proprietario: " + predios.get(j).getUnidade().get(j).proprietario.getCpf());
+				//System.out.println("Metragem Unidade: " + predios.get(i).getMetragemTotal());
+				System.out.println("Quatidade de Quartos: " + predios.get(j).getUnidade().get(j).getNumQuartos());
+				System.out.println("Quantidade de Banheiros: " + predios.get(j).getUnidade().get(j).getNumBanheiros());
 				System.out.println();
 				
 			}
-			*/
+			
+			
+					
+			
+			
 			System.out.println();
 			System.out.println();
 			
