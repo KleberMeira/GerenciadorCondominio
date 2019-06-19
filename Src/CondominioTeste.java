@@ -16,11 +16,15 @@ public class CondominioTeste {
 		Pessoa p2 = new Pessoa("Gilberto Macedo", "457");
 		Pessoa p3 = new Pessoa("Felipe", "574");
 		Pessoa p4 = new Pessoa("Diogo", "457");
+		Pessoa p5 = new Pessoa("Amanda", "1657");
+		Pessoa p6 = new Pessoa("Fernanda", "1105");
 		//float metragemUnidade, int numQuartos, int numBanheiros, Pessoa proprietario
 		UnidadeResidencial ud = new UnidadeResidencial(14, 2, 2, p );
 		UnidadeResidencial ud2 = new UnidadeResidencial(14, 3, 1, p2 );
 		UnidadeResidencial ud3 = new UnidadeResidencial(24, 4, 3, p3 );
-		UnidadeResidencial ud4 = new UnidadeResidencial(31, 4, 4, p4 );
+		UnidadeResidencial ud4 = new UnidadeResidencial(80, 3, 1, p4 );
+		UnidadeResidencial ud5 = new UnidadeResidencial(53, 5, 4, p5 );
+		UnidadeResidencial ud6 = new UnidadeResidencial(68, 3, 2, p6 );
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//String nomePredio, int numAndares, int apPorAndar
 
@@ -39,25 +43,17 @@ public class CondominioTeste {
 		Casa cs = new Casa(430, "Rua 1", eng, ud2, true);
 		Casa cs2 = new Casa(650, "Rua 1B", eng, ud3, false);
 		
-		/*
-		System.out.println("- Unidade Casa -");
-		cs.setCasa(ud3);
-		cs.setCasa(ud4);
-		cs.dadosCasa();
-		*/
-		
-		/*
-		pre2.setApartamentos(ud2);
-		pre2.setApartamentos(ud);
-		pre2.dadosAptos();
-		*/
+		cs.cadastrarUnidade(ud4);
+		cs.cadastrarUnidade(ud5);
+		cs.cadastrarUnidade(ud6);
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//double metragemCondominio, String proprietarioCondominio, String enderecoCondominio
 		Condominio cond = new Condominio(2100, "Rua Manoel Machado", eng, ud, 120, "Joao Ferreira Dias", "Avenida Filinto Miller");
-		
+		Condominio cond2 = new Condominio(5500, "Avenida Paraiso", eng, ud4, 230, "Joaquim Barbosa", "Rua Celeste");
 		cond.setPredios(pre);
 		//cond.setPredios(pre2);
+		
 
 		cond.infoCondominio();
 		

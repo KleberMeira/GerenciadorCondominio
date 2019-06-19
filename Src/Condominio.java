@@ -88,7 +88,6 @@ public class Condominio extends Edificacao {
 
 	public void infoCondominio() {
 		
-		
 		System.out.println("::Condominio::");
 		System.out.println("Proprietario: " + getProprietarioCondominio());
 		System.out.println("Endereco: " + getEnderecoCondominio());
@@ -105,33 +104,46 @@ public class Condominio extends Edificacao {
 			System.out.println();
 			System.out.println("--Apartamentos--");
 			
+			int cont = 1;
 			//exessao indexOfBounsExeption
-			int tamanho = predios.get(i).getUnidade().size();
-			for(int j = 0; j < tamanho; j++) {
-				
-				System.out.println("Proprietario: " + predios.get(j).getUnidade().get(j).proprietario.getNome());
-				System.out.println("Cpf do Proprietario: " + predios.get(j).getUnidade().get(j).proprietario.getCpf());
-				//System.out.println("Metragem Unidade: " + predios.get(i).getMetragemTotal());
-				System.out.println("Quatidade de Quartos: " + predios.get(j).getUnidade().get(j).getNumQuartos());
-				System.out.println("Quantidade de Banheiros: " + predios.get(j).getUnidade().get(j).getNumBanheiros());
+			for(int j = 0; j < predios.get(i).getUnidade().size() ; j++) {
+				System.out.println("Unidade " + cont++);
+				System.out.println("Propriedade de "  + predios.get(i).getUnidade().get(j).getProprietario().getNome());
+				System.out.println("Possui " + predios.get(i).getUnidade().get(j).getMetragemUnidade() + " metros quadrados"
+				+ ", " + predios.get(i).getUnidade().get(j).getNumQuartos() + " quartos" + ", " +
+						 predios.get(i).getUnidade().get(j).getNumBanheiros() + " banheiro(s).");
 				System.out.println();
-				
 			}
 			
-			
-					
-			
-			
 			System.out.println();
-			System.out.println();
-			
-			
-			
-			System.out.println();
-		}
 		
+		}
+
+	}
 	
-		System.out.println("Fim");
+public void infoCondominioCasa() {
+		
+		System.out.println("::Condominio::");
+		System.out.println("Proprietario: " + getProprietarioCondominio());
+		System.out.println("Endereco: " + getEnderecoCondominio());
+		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
+		System.out.println();
+		
+		
+		for(int i = 0; i < casas.size(); i++) {
+			System.out.println("Unidade: " + i);
+			System.out.println("Sobrado? " + casas.get(i).descricaoDoImovel());
+			
+			System.out.println();
+			System.out.println("--Dados da Casa--");
+			
+			System.out.println("Propriedade de " + casas.get(i).getUnidade().get(i).getProprietario().getNome());
+			System.out.println("Possui " + casas.get(i).getUnidade().get(i).getMetragemUnidade() + " metros quadrados" );
+			
+			System.out.println();
+		
+		}
+
 	}
 	
 

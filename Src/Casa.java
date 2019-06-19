@@ -5,7 +5,7 @@ public class Casa extends Edificacao {
 
 	protected boolean condominio;
 	
-	List<UnidadeResidencial> unidade = new ArrayList<UnidadeResidencial>();
+	private List<UnidadeResidencial> unidade = new ArrayList<UnidadeResidencial>();
 
 	public Casa(float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 			boolean condominio) {
@@ -26,6 +26,14 @@ public class Casa extends Edificacao {
 		unidade.add(unid);	
 	}
 	
+	public List<UnidadeResidencial> getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(List<UnidadeResidencial> unidade) {
+		this.unidade = unidade;
+	}
+
 	public void dadosCasa() {
 		
 		for(int i = 0; i < unidade.size(); i++) {
