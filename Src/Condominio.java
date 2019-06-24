@@ -84,6 +84,20 @@ public class Condominio extends Edificacao {
 		return null;
 	}
 	
+	//Ordenado
+	
+	public void listagemPredios() {
+		
+	}
+	
+	public void listagemCasas() {
+		
+	}
+	
+	public void listagemUnidades() {
+		
+	}
+	
 
 
 	public void infoCondominio() {

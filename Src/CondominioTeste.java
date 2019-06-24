@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class CondominioTeste {
 
 	public static void main(String[] args) {
@@ -36,6 +41,19 @@ public class CondominioTeste {
 		pre.setApto(ud2);
 		pre.setApto(ud3);
 		
+		ArrayList <Predio> pr = new ArrayList<Predio>();
+		
+		pr.add(pre);
+		pr.add(pre2);
+		
+		Collections.sort(pr);
+		int cont = 0;
+		for(Predio o : pr) {
+			System.out.println(o.descricaoDoImovel() + 
+							   o.getUnidade());
+								
+		}
+		
 		//pre.dadosAp();
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
@@ -53,9 +71,11 @@ public class CondominioTeste {
 		Condominio cond2 = new Condominio(5500, "Avenida Paraiso", eng, ud4, 230, "Joaquim Barbosa", "Rua Celeste");
 		cond.setPredios(pre);
 		//cond.setPredios(pre2);
+	
 		
-
-		cond.infoCondominio();
+		
+		//cond.infoCondominio();
+		
 		
 		
 		

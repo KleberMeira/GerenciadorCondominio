@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Predio extends Edificacao {
+public final class Predio extends Edificacao implements Comparable<Predio> {
 
 	private String nomePredio;
 	private int numAndares;
@@ -64,6 +64,10 @@ public final class Predio extends Edificacao {
 		this.apPorAndar = apPorAndar;
 	}
 
+	
+	
+	
+	
 	// Desc Predio
 	public String descricaoDoImovel() {
 		return " Predio: " + getNomePredio() + "\n" + "Numero de Andares: "
@@ -73,5 +77,19 @@ public final class Predio extends Edificacao {
 	public boolean isEmpty() {
 		return false;
 	}
+
+	@Override
+	public int compareTo(Predio o) {
+		
+		if(this.numAndares == o.numAndares) {
+			return 0;
+		}
+		else if(this.numAndares > o.numAndares) {
+			return 1;
+		}
+		else
+			return -1;
+	}
+
 	
 }
