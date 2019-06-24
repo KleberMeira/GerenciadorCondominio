@@ -30,6 +30,8 @@ public class CondominioTeste {
 		UnidadeResidencial ud4 = new UnidadeResidencial(80, 3, 1, p4 );
 		UnidadeResidencial ud5 = new UnidadeResidencial(53, 5, 4, p5 );
 		UnidadeResidencial ud6 = new UnidadeResidencial(68, 3, 2, p6 );
+		UnidadeResidencial ud7 = new UnidadeResidencial(10, 1, 2, p6 );
+		UnidadeResidencial ud8 = new UnidadeResidencial(16, 2, 2, p6 );
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//String nomePredio, int numAndares, int apPorAndar
 
@@ -41,23 +43,30 @@ public class CondominioTeste {
 		pre.setApto(ud2);
 		pre.setApto(ud3);
 		
+		pre2.setApto(ud7);
+		pre2.setApto(ud8);
+		
 		ArrayList <Predio> pr = new ArrayList<Predio>();
 		
 		pr.add(pre);
 		pr.add(pre2);
-		
+		//System.out.println("Ordenacao Predio");
 		Collections.sort(pr);
-		int cont = 0;
-		for(Predio o : pr) {
-			System.out.println(o.descricaoDoImovel() + 
-							   o.getUnidade());
-								
-		}
 		
+		/*
+		for(Predio o : pr) {
+			System.out.println(o.descricaoDoImovel());				
+		}
+		*/
+		
+			
 		//pre.dadosAp();
 		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//boolean condominio
+		
+		/*
+		System.out.println("Ordenacao Casa");
 		Casa cs = new Casa(430, "Rua 1", eng, ud2, true);
 		Casa cs2 = new Casa(650, "Rua 1B", eng, ud3, false);
 		
@@ -65,19 +74,26 @@ public class CondominioTeste {
 		cs.cadastrarUnidade(ud5);
 		cs.cadastrarUnidade(ud6);
 		
+		ArrayList <Casa> cas = new ArrayList<Casa>();
+		
+		cas.add(cs);
+		cas.add(cs2);
+		
+		Collections.sort(cas);
+		for(Casa c : cas) {
+			System.out.println(c.descricaoDoImovel());
+		}
+		*/
+		
 		//float metragemTotal, String endereco, Engenheiro responsavel, UnidadeResidencial unidades,
 		//double metragemCondominio, String proprietarioCondominio, String enderecoCondominio
 		Condominio cond = new Condominio(2100, "Rua Manoel Machado", eng, ud, 120, "Joao Ferreira Dias", "Avenida Filinto Miller");
 		Condominio cond2 = new Condominio(5500, "Avenida Paraiso", eng, ud4, 230, "Joaquim Barbosa", "Rua Celeste");
 		cond.setPredios(pre);
+		cond.setPredios(pre2);
 		//cond.setPredios(pre2);
-	
-		
-		
-		//cond.infoCondominio();
-		
-		
-		
+
+		cond.infoCondominio();
 		
 		/*
 		System.out.println(" Gerenciador de Condominio ");

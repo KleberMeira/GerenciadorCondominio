@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Condominio extends Edificacao {
+public class Condominio extends Edificacao implements Comparable<Condominio> {
 
 	private double metragemCondominio;
 	private String proprietarioCondominio;
@@ -98,6 +98,67 @@ public class Condominio extends Edificacao {
 		
 	}
 	
+	//ordena por quantidade de banheiros de um predio
+	public void ordemPredio() {
+		
+		System.out.println("::Condominio::");
+		System.out.println("Proprietario: " + getProprietarioCondominio());
+		System.out.println("Endereco: " + getEnderecoCondominio());
+		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
+		System.out.println();
+		
+		for(int i = 0; i < predios.size(); i++) {
+			System.out.println("Unidade: " + i);
+			System.out.println("Nome do Predios: " + predios.get(i).getNomePredio());
+			System.out.println("Quantidade de andar: " + predios.get(i).getNumAndares());
+			System.out.println("Apartamentos por andar: " + predios.get(i).getApPorAndar());
+			
+			System.out.println();
+			System.out.println("--Apartamentos--");
+			
+			int cont = 1;
+			for(int j = 0; j < predios.get(i).getUnidade().size() ; j++) {
+				System.out.println("Unidade " + cont++);
+				
+			} 
+		}
+	}
+	
+	//ordena por metragem de uma casa
+	public void ordemCasa() {
+		
+		System.out.println("::Condominio::");
+		System.out.println("Proprietario: " + getProprietarioCondominio());
+		System.out.println("Endereco: " + getEnderecoCondominio());
+		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
+		System.out.println();
+		
+		for(int i = 0; i < casas.size(); i++) {
+			System.out.println("Unidade: " + i);
+			System.out.println("Sobrado? " + casas.get(i).descricaoDoImovel());
+			
+			System.out.println();
+			System.out.println("--Dados da Casa--");
+			
+			System.out.println("Propriedade de " + casas.get(i).getUnidade().get(i).getProprietario().getNome());
+			System.out.println("Possui " + casas.get(i).getUnidade().get(i).getMetragemUnidade() + " metros quadrados" );
+			
+			System.out.println();
+		}
+	}
+	
+	//ordena por metragem de uma casa e um predio
+	public void ordem() {
+		
+		System.out.println("::Condominio::");
+		System.out.println("Proprietario: " + getProprietarioCondominio());
+		System.out.println("Endereco: " + getEnderecoCondominio());
+		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
+		System.out.println();
+		
+		
+		
+	}
 
 
 	public void infoCondominio() {
@@ -135,7 +196,7 @@ public class Condominio extends Edificacao {
 
 	}
 	
-public void infoCondominioCasa() {
+	public void infoCondominioCasa() {
 		
 		System.out.println("::Condominio::");
 		System.out.println("Proprietario: " + getProprietarioCondominio());
@@ -158,6 +219,18 @@ public void infoCondominioCasa() {
 		
 		}
 
+	}
+
+
+
+	@Override
+	public int compareTo(Condominio o) {
+		return 0;
+	}
+	
+	public int comparePredio(Condominio c) {
+		
+		return 0;
 	}
 	
 

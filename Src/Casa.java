@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Casa extends Edificacao {
+public class Casa extends Edificacao implements Comparable<Casa> {
 
 	protected boolean condominio;
 	
@@ -43,10 +43,26 @@ public class Casa extends Edificacao {
 		
 	}
 	
+
+	@Override
+	public int compareTo(Casa o) {
+		
+		if(this.getMetragemTotal() == o.getMetragemTotal()) {
+			return 0;
+		}
+		else if(this.getMetragemTotal() > o.getMetragemTotal()) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
 	// Desc Casa
 		public String descricaoDoImovel() {
-			return " Condominio: " + isCondominio();
+			return " Condominio: " + isCondominio() + " Metragem Total: " + getMetragemTotal();
 		}
+
 	
 
 }

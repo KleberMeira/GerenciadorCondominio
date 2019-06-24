@@ -65,7 +65,14 @@ public final class Predio extends Edificacao implements Comparable<Predio> {
 	}
 
 	
-	
+	public void infoUnidades() {
+		for(int i = 0; i < unidade.size(); i++) {
+			System.out.println("Metragem: " + unidade.get(i).getProprietario().getNome());
+			System.out.println("Metragem: " + unidade.get(i).getMetragemUnidade());
+			System.out.println(unidade.get(i).getNumQuartos() + " Quarto(s) / " + unidade.get(i).getNumBanheiros() +  " Banheiro(s)");
+		}
+		System.out.println();
+	}
 	
 	
 	// Desc Predio
