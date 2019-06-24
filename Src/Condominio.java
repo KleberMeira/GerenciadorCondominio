@@ -1,11 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Condominio extends Edificacao implements Comparable<Condominio> {
+public class Condominio extends Edificacao {
 
 	private double metragemCondominio;
 	private String proprietarioCondominio;
 	private String enderecoCondominio;
+	
+	Map <Float, Edificacao> ed = new HashMap<Float, Edificacao>();
 	
 	List <Predio> predios = new ArrayList<Predio>();
 	List <Casa> casas = new ArrayList<Casa>();
@@ -73,93 +77,23 @@ public class Condominio extends Edificacao implements Comparable<Condominio> {
 	
 	public Predio buscaPredio(String nome) {
 		
-		//exessao
-		for(int i = 0; i < predios.size(); i++) {
-			
-			if(predios.get(i).getNomePredio() == nome) {
-				return predios.get(i);
+		try {
+			//exessao
+			for(int i = 0; i < predios.size(); i++) {
+				
+				if(predios.get(i).getNomePredio() == nome) {
+					return predios.get(i);
+				}
+				
 			}
-			
+			return null;
+		}
+		catch(ArrayIndexOutOfBoundsException a) {
+			System.out.println("Array inválido");
 		}
 		return null;
-	}
-	
-	//Ordenado
-	
-	public void listagemPredios() {
 		
 	}
-	
-	public void listagemCasas() {
-		
-	}
-	
-	public void listagemUnidades() {
-		
-	}
-	
-	//ordena por quantidade de banheiros de um predio
-	public void ordemPredio() {
-		
-		System.out.println("::Condominio::");
-		System.out.println("Proprietario: " + getProprietarioCondominio());
-		System.out.println("Endereco: " + getEnderecoCondominio());
-		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
-		System.out.println();
-		
-		for(int i = 0; i < predios.size(); i++) {
-			System.out.println("Unidade: " + i);
-			System.out.println("Nome do Predios: " + predios.get(i).getNomePredio());
-			System.out.println("Quantidade de andar: " + predios.get(i).getNumAndares());
-			System.out.println("Apartamentos por andar: " + predios.get(i).getApPorAndar());
-			
-			System.out.println();
-			System.out.println("--Apartamentos--");
-			
-			int cont = 1;
-			for(int j = 0; j < predios.get(i).getUnidade().size() ; j++) {
-				System.out.println("Unidade " + cont++);
-				
-			} 
-		}
-	}
-	
-	//ordena por metragem de uma casa
-	public void ordemCasa() {
-		
-		System.out.println("::Condominio::");
-		System.out.println("Proprietario: " + getProprietarioCondominio());
-		System.out.println("Endereco: " + getEnderecoCondominio());
-		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
-		System.out.println();
-		
-		for(int i = 0; i < casas.size(); i++) {
-			System.out.println("Unidade: " + i);
-			System.out.println("Sobrado? " + casas.get(i).descricaoDoImovel());
-			
-			System.out.println();
-			System.out.println("--Dados da Casa--");
-			
-			System.out.println("Propriedade de " + casas.get(i).getUnidade().get(i).getProprietario().getNome());
-			System.out.println("Possui " + casas.get(i).getUnidade().get(i).getMetragemUnidade() + " metros quadrados" );
-			
-			System.out.println();
-		}
-	}
-	
-	//ordena por metragem de uma casa e um predio
-	public void ordem() {
-		
-		System.out.println("::Condominio::");
-		System.out.println("Proprietario: " + getProprietarioCondominio());
-		System.out.println("Endereco: " + getEnderecoCondominio());
-		System.out.println("Metragem: " + getMetragemCondominio() + " metros quadrados.");
-		System.out.println();
-		
-		
-		
-	}
-
 
 	public void infoCondominio() {
 		
@@ -179,16 +113,23 @@ public class Condominio extends Edificacao implements Comparable<Condominio> {
 			System.out.println();
 			System.out.println("--Apartamentos--");
 			
-			int cont = 1;
-			//exessao indexOfBounsExeption
-			for(int j = 0; j < predios.get(i).getUnidade().size() ; j++) {
-				System.out.println("Unidade " + cont++);
-				System.out.println("Propriedade de "  + predios.get(i).getUnidade().get(j).getProprietario().getNome());
-				System.out.println("Possui " + predios.get(i).getUnidade().get(j).getMetragemUnidade() + " metros quadrados"
-				+ ", " + predios.get(i).getUnidade().get(j).getNumQuartos() + " quartos" + ", " +
-						 predios.get(i).getUnidade().get(j).getNumBanheiros() + " banheiro(s).");
-				System.out.println();
+			try {
+				int cont = 1;
+				//exessao indexOfBounsExeption
+				
+				for(int j = 0; j < predios.get(i).getUnidade().size() ; j++) {
+					System.out.println("Unidade " + cont++);
+					System.out.println("Propriedade de "  + predios.get(i).getUnidade().get(j).getProprietario().getNome());
+					System.out.println("Possui " + predios.get(i).getUnidade().get(j).getMetragemUnidade() + " metros quadrados"
+					+ ", " + predios.get(i).getUnidade().get(j).getNumQuartos() + " quartos" + ", " +
+							 predios.get(i).getUnidade().get(j).getNumBanheiros() + " banheiro(s).");
+					System.out.println();
+				}
 			}
+			catch(IndexOutOfBoundsException e) {
+				System.out.println("Invalido");
+			}
+			
 			
 			System.out.println();
 		
@@ -207,13 +148,23 @@ public class Condominio extends Edificacao implements Comparable<Condominio> {
 		
 		for(int i = 0; i < casas.size(); i++) {
 			System.out.println("Unidade: " + i);
-			System.out.println("Sobrado? " + casas.get(i).descricaoDoImovel());
+			System.out.println(casas.get(i).descricaoDoImovel());
 			
 			System.out.println();
 			System.out.println("--Dados da Casa--");
 			
-			System.out.println("Propriedade de " + casas.get(i).getUnidade().get(i).getProprietario().getNome());
-			System.out.println("Possui " + casas.get(i).getUnidade().get(i).getMetragemUnidade() + " metros quadrados" );
+			int cont = 1;
+			//exessao indexOfBounsExeption
+			for(int j = 0; j < casas.get(i).getUnidade().size() ; j++) {
+				System.out.println("Unidade " + cont++);
+				System.out.println("Propriedade de "  + casas.get(i).getUnidade().get(j).getProprietario().getNome());
+				System.out.println("Possui " + casas.get(i).getUnidade().get(j).getMetragemUnidade() + " metros quadrados"
+				+ ", " + casas.get(i).getUnidade().get(j).getNumQuartos() + " quartos" + ", " +
+						 casas.get(i).getUnidade().get(j).getNumBanheiros() + " banheiro(s).");
+				System.out.println();
+			}
+			
+
 			
 			System.out.println();
 		
@@ -222,22 +173,34 @@ public class Condominio extends Edificacao implements Comparable<Condominio> {
 	}
 
 
-
-	@Override
-	public int compareTo(Condominio o) {
-		return 0;
-	}
-	
-	public int comparePredio(Condominio c) {
+	public void ordemEdificacao(Edificacao tipo) {
 		
-		return 0;
+		if(tipo instanceof Predio) {
+			
+			for(int i = 0; i < predios.size(); i++) {
+				ed.put(predios.get(i).getMetragemTotal(), tipo);
+			}
+			
+			System.out.println("Predios - Ordedenado por Andar");
+
+				System.out.println(ed.toString());
+			
+			
+			
+		}
+		else if(tipo instanceof Casa) {
+			
+		}
+		else {
+			
+		}
+		
+		
 	}
 	
-
 	
 	
-	
-/*	
+	/*
 	// Inclui Predios e/ou casas
 	public void adicionaConstrucao(Edificacao construcao) {
 

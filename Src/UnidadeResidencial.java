@@ -1,6 +1,6 @@
 
 
-public class UnidadeResidencial {
+public class UnidadeResidencial implements Comparable<UnidadeResidencial> {
 
 	protected float metragemUnidade;
 	protected int numQuartos;
@@ -58,6 +58,22 @@ public class UnidadeResidencial {
 		this.proprietario = proprietario;
 	}
 
+	@Override
+	public int compareTo(UnidadeResidencial o) {
+		
+		if(this.metragemUnidade == o.metragemUnidade) {
+			return 0;
+		}
+		else if(this.metragemUnidade > o.metragemUnidade) {
+			return 1;
+		}
+		else
+			return 0;
+	}
+	
+	
+	
+	
 	//Desc para uma unidade residencial
 	public String descricaoDoImovel() {
 		return  " " + proprietario.infoPessoa() +"\n"+
@@ -65,4 +81,5 @@ public class UnidadeResidencial {
 				 getNumQuartos() + " quartos." + "\n"+
 				 getNumBanheiros() + " banheiros." ;			
 	}
+
 }

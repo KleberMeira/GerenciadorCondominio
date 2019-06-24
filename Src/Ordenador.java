@@ -1,7 +1,9 @@
+import java.util.List;
 
 public class Ordenador {
-
-	public void mergesortAno(Predio a[], int start, int end) {
+/*
+	public void mergesortAno(Predio[] a, int start, int end) {
+		
 		if (start < end) {
 			int middle = (start + end) / 2;
 			mergesortAno(a, start, middle);
@@ -21,7 +23,7 @@ public class Ordenador {
 		int k = start;
 
 		while (i <= middle && j <= end) {
-			if (b[i].getData().compareAno(b[j].getData().getAno()) < 0)
+			if (b[i].getNumAndares() < 0)
 				a[k++].copiarEvento(b[i++]);
 			else
 				a[k++].copiarEvento(b[j++]);
@@ -31,5 +33,5 @@ public class Ordenador {
 			a[k++].copiarEvento(b[i++]);
 
 	}
-	
+	*/
 }

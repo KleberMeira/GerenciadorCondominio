@@ -16,12 +16,14 @@ public final class Predio extends Edificacao implements Comparable<Predio> {
 		this.numAndares = numAndares;
 		this.apPorAndar = apPorAndar;
 	}
-
-	public void setApto(UnidadeResidencial unid) {		
-		unidade.add(unid);
+	
+	public boolean cadastrarUnidade(UnidadeResidencial novaUnid) {
+		
+		this.unidade.add(novaUnid);
+		
+		return true;
 	}
 	
-
 	public List<UnidadeResidencial> getUnidade() {
 		return unidade;
 	}
@@ -88,10 +90,10 @@ public final class Predio extends Edificacao implements Comparable<Predio> {
 	@Override
 	public int compareTo(Predio o) {
 		
-		if(this.numAndares == o.numAndares) {
+		if(this.getMetragemTotal() == o.getMetragemTotal()) {
 			return 0;
 		}
-		else if(this.numAndares > o.numAndares) {
+		else if(this.getMetragemTotal() > o.getMetragemTotal()) {
 			return 1;
 		}
 		else

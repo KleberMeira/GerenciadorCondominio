@@ -21,10 +21,11 @@ public class Casa extends Edificacao implements Comparable<Casa> {
 		this.condominio = condominio;
 	}
 	
-	
-	public void setCasa(UnidadeResidencial unid) {	
-		unidade.add(unid);	
+	public boolean cadastrarUnidade(UnidadeResidencial novaUnid) {
+		this.unidade.add(novaUnid);
+		return true;
 	}
+	
 	
 	public List<UnidadeResidencial> getUnidade() {
 		return unidade;
@@ -33,16 +34,6 @@ public class Casa extends Edificacao implements Comparable<Casa> {
 	public void setUnidade(List<UnidadeResidencial> unidade) {
 		this.unidade = unidade;
 	}
-
-	public void dadosCasa() {
-		
-		for(int i = 0; i < unidade.size(); i++) {
-			System.out.println(unidade.get(i).descricaoDoImovel());
-			System.out.println();
-		}
-		
-	}
-	
 
 	@Override
 	public int compareTo(Casa o) {
@@ -60,7 +51,7 @@ public class Casa extends Edificacao implements Comparable<Casa> {
 	
 	// Desc Casa
 		public String descricaoDoImovel() {
-			return " Condominio: " + isCondominio() + " Metragem Total: " + getMetragemTotal();
+			return " Condominio: " + isCondominio() + " /" + " Metragem Total: " + getMetragemTotal();
 		}
 
 	
